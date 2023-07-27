@@ -1,6 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function MovieList(props) {
+  const navigate = useNavigate();
+  const movieClick = id => () => {
+    navigate(`movies/${id}`)
+  }
   return (
     <div className="movie-list">
       {props.movies.map(movie => (
